@@ -1,11 +1,12 @@
-import "./App.css";
+import "./styles.css";
 import React from "react";
-import { loadPosts } from "./utils/load-posts"
-import { Posts } from "./components/Posts";
+import { loadPosts } from "../../utils/load-posts"
+import { Posts } from "../../components/Posts";
 
-class App extends React.Component {
+export class Home extends React.Component {
   state = {
-    posts: []
+    posts: [],
+    allPosts: [],
   };
 
   async componentDidMount() {
@@ -28,4 +29,3 @@ class App extends React.Component {
   }
 }
 
-export default App;
