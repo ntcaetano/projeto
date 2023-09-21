@@ -7,6 +7,8 @@ export class Home extends React.Component {
   state = {
     posts: [],
     allPosts: [],
+    page: 0,
+    postsPerPage: 10
   };
 
   async componentDidMount() {
@@ -14,8 +16,13 @@ export class Home extends React.Component {
   };
 
   loadPosts = async () => {
+    const { page, postsPerPage } = this.state;
+
     const postsAndPhotos = await loadPosts();
-    this.setState({ posts: postsAndPhotos });
+    this.setState({
+      posts: postsAndPhotos.slice(page, postsPerPage),
+      allPosts: postsAndPhotos,
+    });
   };
 
   render() {
