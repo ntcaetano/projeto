@@ -3,12 +3,13 @@ import { Component } from "react";
 
 export class Button extends Component {
     render() {
-        const { text, quandoClica } = this.props;
+        const { text, quandoClica, desabilitado } = this.props;
         return (
-            <button 
-            disabled
-            className="button"
-            onClick={quandoClica}>
+            <button
+                className="button"
+                onClick={quandoClica}
+                disabled={desabilitado}
+            >
                 {text}
             </button>
         );
