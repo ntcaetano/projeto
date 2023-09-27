@@ -34,4 +34,10 @@ describe('<Button />', () => {
     const button = screen.getByRole('button', { name: /load more/i });
     expect(button).toBeEnabled();
   });
+
+  it('should match snapshot', () => {
+    const {container} = render(<Button text="Load more" disabled={false} />);
+    // eslint-disable-next-line testing-library/no-node-access
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
