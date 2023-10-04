@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import P from 'prop-types';
 import '.styles.css';
 

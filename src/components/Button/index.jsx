@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import "./styles.css"
 import P from 'prop-types'
 
@@ -17,6 +18,6 @@ Button.defaultProps = {
 
 Button.propTypes = {
     text: P.string.isRequired,
-    onCLick: P.func.isRequired,
+    onClick: P.func.isRequired,
     disabled: P.bool,
 }
